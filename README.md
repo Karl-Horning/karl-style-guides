@@ -21,6 +21,7 @@ This repository collects style guides and templates designed to make text-based 
   - [🧱 Formatting Rules](#-formatting-rules)
   - [♿ Accessibility \& Tone](#-accessibility--tone)
   - [🔧 Maintenance](#-maintenance)
+  - [🧭 Adoption (teams)](#-adoption-teams)
   - [👤 Author](#-author)
 
 ---
@@ -104,6 +105,17 @@ cp -r templates/* ~/your-project/
 - Keep examples accurate and templates usable.
 - Align terminology with real project usage.
 - Remove or revise outdated rules promptly.
+
+---
+
+## 🧭 Adoption (teams)
+
+Start small:
+
+1. Copy the relevant files from `guides/` and `templates/`.
+1. Add the CI from `.github/workflows/lint.yml`.
+1. Announce the change and link these guides in your team wiki.
+1. Iterate — these are **living documents**; keep PRs small and focused.
 
 ---
 
