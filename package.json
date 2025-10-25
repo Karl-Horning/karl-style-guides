@@ -1,0 +1,32 @@
+{
+  "name": "karl-style-guides",
+  "version": "1.0.0",
+  "description": "Concise, practical rules for **readable, consistent, and accessible** documentation and commits. This repository collects style guides and templates designed to make text-based resources easier to **read, navigate, and maintain**.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "format": "prettier --write \"**/*.md\"",
+    "lint:md": "markdownlint \"**/*.md\" -c .markdownlint.yml",
+    "spellcheck": "cspell \"**/*.md\" --config ./.cspell.json",
+    "check": "npm run lint:md && npm run spellcheck"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karl-Horning/karl-style-guides.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Karl-Horning/karl-style-guides/issues"
+  },
+  "homepage": "https://github.com/Karl-Horning/karl-style-guides#readme",
+  "devDependencies": {
+    "cspell": "^9.2.2",
+    "markdownlint-cli": "^0.45.0",
+    "prettier": "^3.6.2"
+  }
+}
