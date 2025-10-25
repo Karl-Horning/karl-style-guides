@@ -1,5 +1,8 @@
 # 🧭 Developer Style Guides
 
+[![Lint & Spellcheck](https://github.com/Karl-Horning/karl-style-guides/actions/workflows/lint.yml/badge.svg)](https://github.com/Karl-Horning/karl-style-guides/actions/workflows/lint.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 Concise, practical rules for **readable, consistent, and accessible** documentation and commits.
 This repository collects style guides and templates designed to make text-based resources easier to **read, navigate, and maintain**.
 
