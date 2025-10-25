@@ -1,6 +1,6 @@
 # 📝 Git Commit Style Guide
 
-Short, practical rules for **clear, consistent commits**.  
+Short, practical rules for **clear, consistent commits**.
 Based on [Conventional Commits](https://www.conventionalcommits.org/), with extras for **UX** and **accessibility**.
 
 ---
@@ -40,7 +40,7 @@ Based on [Conventional Commits](https://www.conventionalcommits.org/), with extr
 
 ## 📖 Overview
 
-A good commit message tells **what** changed and **why**.  
+A good commit message tells **what** changed and **why**.
 It helps you trace intent, debug faster, and keep a clean history.
 
 ---
@@ -55,7 +55,7 @@ It helps you trace intent, debug faster, and keep a clean history.
 [optional footer(s)]
 ```
 
-Each commit should do **one clear thing**.  
+Each commit should do **one clear thing**.
 Wrap body lines at **~72 chars**.
 
 ---
@@ -83,8 +83,8 @@ Wrap body lines at **~72 chars**.
 
 Describe **where** the change happens — a module, file, or feature.
 
-- Use lowercase  
-- Keep it short (1–2 words)  
+- Use lowercase
+- Keep it short (1–2 words)
 - Skip if it adds no clarity
 
 ### 🔍 Examples
@@ -99,9 +99,9 @@ docs(api): update JSDoc for getUserToken
 
 ## 🧠 Summary (Required)
 
-- Use **imperative mood** — “add”, not “added”  
-- **No punctuation** at the end  
-- Stay under **50 chars** when possible  
+- Use **imperative mood** — “add”, not “added”
+- **No punctuation** at the end
+- Stay under **50 chars** when possible
 - Say **what** changed, not **how**
 
 ### ✅ Good Examples
@@ -252,8 +252,8 @@ git config --global commit.template ~/.gitmessage
 
 ### Why this matters
 
-- Makes history searchable  
-- Clarifies intent  
+- Makes history searchable
+- Clarifies intent
 - Reduces mental load in reviews
 
 ---
