@@ -7,9 +7,9 @@
     "example": "examples"
   },
   "scripts": {
-    "format": "prettier --write \"**/*.md\"",
-    "lint:md": "markdownlint \"**/*.md\" -c .markdownlint.yml",
-    "spellcheck": "cspell \"**/*.md\" --config ./.cspell.json",
+    "format": "prettier --write \"**/*.md\" \"!node_modules/**\"",
+    "lint:md": "markdownlint \"**/*.md\" -c .markdownlint.yml --ignore node_modules",
+    "spellcheck": "cspell \"**/*.md\" --config ./.cspell.json --exclude \"node_modules/**\"",
     "check": "npm run lint:md && npm run spellcheck"
   },
   "repository": {
