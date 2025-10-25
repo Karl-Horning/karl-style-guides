@@ -1,20 +1,25 @@
 {
   "version": "0.2",
   "language": "en-GB",
+  "dictionaries": ["softwareTerms", "node", "npm", "html", "css"],
   "ignorePaths": ["node_modules", "dist", "coverage", ".git", ".github"],
   "words": [
     "a11y",
     "alt",
     "backticks",
     "emoji",
+    "gitmessage",
     "JSDoc",
     "jsdoc",
     "markdownlint",
     "memoise",
+    "nsfw",
+    "pasteable",
     "readme",
     "Tailwind",
     "TypeScript",
     "Nextjs",
-    "CLI"
+    "CLI",
+    "vars"
   ]
 }
