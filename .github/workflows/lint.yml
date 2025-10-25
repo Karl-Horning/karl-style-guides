@@ -1,0 +1,28 @@
+name: Lint & Spellcheck
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci || npm i
+
+      - name: Lint Markdown
+        run: npm run lint:md
+
+      - name: Spellcheck
+        run: npm run spellcheck
