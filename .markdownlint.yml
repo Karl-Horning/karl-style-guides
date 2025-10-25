@@ -1,0 +1,31 @@
+# Consistent, accessible Markdown aligned to the style guides
+default: true
+
+# Line length: enforce for prose, ignore for code blocks/long URLs
+MD013:
+  line_length: 80
+  code_blocks: false
+  tables: false
+  headings: false
+  strict: false
+
+# Unordered list marker must be hyphen (-)
+MD004:
+  style: dash
+
+# Only fenced code blocks
+MD046:
+  style: fenced
+
+# Allow inline HTML if ever needed (kept permissive to avoid false positives)
+MD033: false
+
+# Heading style and spacing hygiene
+MD003: { style: atx } # ATX (#) headings
+MD041: true # First line should be a h1
+MD022: true # Blank lines around headings
+MD025: true # Single H1 per document
+
+# Ordered list: allow lazy numbering (1.)
+MD029:
+  style: one
