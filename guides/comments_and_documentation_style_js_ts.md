@@ -47,10 +47,10 @@ Simple rules for **clear, accessible, tool-friendly** docs. Adapted in part from
 - Use **Markdown** (lists, code fences). No decorative boxes.
 - **One tag per line**, in this canonical order:
   1. `@param`
-  2. `@returns`
-  3. `@throws`
-  4. `@deprecated`
-  5. `@example`
+  1. `@returns`
+  1. `@throws`
+  1. `@deprecated`
+  1. `@example`
 - **Wrap ~80 chars** for readability.
 - **Document all top-level exports** and any non-obvious symbols.
 - **Avoid redundancy** — do not restate variable names or trivial logic.
