@@ -1,6 +1,6 @@
 # 📝 Comments & Documentation Style (JS/TS)
 
-Simple rules for **clear, accessible, tool-friendly** docs.   Adapted in part from [Google’s TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html#comments-documentation).
+Simple rules for **clear, accessible, tool-friendly** docs. Adapted in part from [Google’s TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html#comments-documentation).
 
 ---
 
@@ -41,17 +41,25 @@ Simple rules for **clear, accessible, tool-friendly** docs.   Adapted in part fr
 
 ## 🧱 JSDoc: General Rules
 
-- First line is a **short summary** (third person).
+- First line is a **complete sentence in third person**, ending with a **period**.
+- Prefer **imperative voice** ("Return…" instead of "Returns…").
+- Place JSDoc **immediately above** the symbol, with one space before the code.
 - Use **Markdown** (lists, code fences). No decorative boxes.
-- **One tag per line** (`@param`, `@returns`, `@throws`, `@deprecated`, `@example`).
+- **One tag per line**, in this canonical order:
+  1. `@param`
+  2. `@returns`
+  3. `@throws`
+  4. `@deprecated`
+  5. `@example`
 - **Wrap ~80 chars** for readability.
 - **Document all top-level exports** and any non-obvious symbols.
+- **Avoid redundancy** — do not restate variable names or trivial logic.
 
 ### Bad list in prose
 
 ```js
 /**
- * Computes weight from: items sent, items received, last timestamp
+ * Compute weight from: items sent, items received, last timestamp
  */
 ```
 
@@ -59,7 +67,7 @@ Simple rules for **clear, accessible, tool-friendly** docs.   Adapted in part fr
 
 ```js
 /**
- * Computes weight based on:
+ * Compute weight based on:
  * - items sent
  * - items received
  * - last timestamp
@@ -76,7 +84,7 @@ Simple rules for **clear, accessible, tool-friendly** docs.   Adapted in part fr
 ### TS example
 
 ```ts
-/** Returns unique authors (order preserved). */
+/** Return unique authors (order preserved). */
 export function getAuthors(jokes: { author: string }[]): string[] { /* … */ }
 ```
 
@@ -91,11 +99,11 @@ export function getAuthors(jokes) { /* … */ }
 
 ## 🔧 Functions & Methods
 
-- Method descriptions **start with a verb phrase** (“Returns…”, “Filters…”).
+- Method descriptions **start with a verb phrase** ("Return…", "Filter…").
 - Omit `@param/@returns` **if the name/signature is obvious**; include when it adds meaning.
 
 ```js
-/** Filters jokes by optional author/category/nsfw flags.
+/** Filter jokes by optional author/category/nsfw flags.
  *
  * - Case-insensitive string matching.
  * - Returns a new array (no mutation).
@@ -115,7 +123,7 @@ export function filterJokes(jokes, opts) { /* … */ }
 - For **parameter properties**, document with `@param`.
 
 ```ts
-/** Caches jokes for fast lookup by id. */
+/** Cache jokes for fast lookup by id. */
 export class JokeCache {
   /** @param store In-memory map used for storage. */
   constructor(private readonly store: Map<string, unknown>) {}
@@ -126,11 +134,13 @@ export class JokeCache {
 
 ## 🗂 Module (File) Docs
 
-- Add a top JSDoc when the **module purpose** isn't obvious.
-- Include a tiny example if useful.
+- Every file that exports symbols should start with a `@file` or `@fileoverview` JSDoc.
+- The first line must be a **short, complete sentence** ending with a **period**.
+- Summarise **the file’s purpose**; include an example if useful.
 
 ```js
-/** Helpers for list pagination and sorting.
+/**
+ * @fileoverview Helpers for list pagination and sorting.
  *
  * @example
  * paginate([1,2,3,4], {page:2, limit:2}) // → [3,4]
@@ -142,6 +152,7 @@ export class JokeCache {
 ## 💬 Line Comments (`//`)
 
 - Explain **why**, not the obvious **what**.
+- Avoid restating logic or variable names; focus on reasoning or constraints.
 - Keep near the code; prefer short sentences.
 
 ```js
@@ -201,14 +212,14 @@ export class FooComponent {}
 ### Good single-line
 
 ```js
-/** Returns a random joke from the dataset. */
+/** Return a random joke from the dataset. */
 export function getRandom(jokes) { /* … */ }
 ```
 
 ### Good multi-line with tags
 
 ```js
-/** Sends a standardised JSON response.
+/** Send a standardised JSON response.
  *
  * - Sets Content-Type and Cache-Control headers.
  *
@@ -228,6 +239,7 @@ export function sendJson(res, data, status = 200) { /* … */ }
 - Keep examples **accurate and copy-pasteable**.
 - Align terminology with real project usage.
 - Remove outdated or redundant rules promptly to avoid confusion.
+- Use ESLint with `eslint-plugin-jsdoc` to validate tag order, punctuation, and spacing.
 
 ---
 
