@@ -16,10 +16,12 @@
     "nsfw",
     "pasteable",
     "readme",
+    "reflow",
     "Tailwind",
     "TypeScript",
     "Nextjs",
     "CLI",
-    "vars"
+    "vars",
+    "WCAG"
   ]
 }
