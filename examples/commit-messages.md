@@ -1,10 +1,10 @@
-# 🧭 Commit Message Examples — Good vs Avoid
+# Commit Message Examples — Good vs Avoid
 
 Examples aligned with the Git Commit Style Guide.
 
 ---
 
-## ✅ Good
+## Good
 
 ```text
 
@@ -17,7 +17,7 @@ a11y(docs): clarify alt text guidance
 
 ---
 
-## ❌ Avoid
+## Avoid
 
 ```text
 

@@ -1,52 +1,52 @@
-# 🧭 README Style Guide
+# README Style Guide
 
 Short, practical rules for **clear, consistent, and accessible READMEs**. This guide is designed to make documents easier to **read, navigate, and maintain**, improving accessibility for all contributors and users.
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
-- [🧭 README Style Guide](#-readme-style-guide)
-  - [📖 Table of Contents](#-table-of-contents)
-  - [🏷️ Required Sections](#️-required-sections)
-    - [1) 📘 Title](#1--title)
-    - [2) 🤓 Overview](#2--overview)
-    - [3) 🚀 Quick Start](#3--quick-start)
-    - [4) 📜 Usage / Scripts](#4--usage--scripts)
-    - [5) 📁 Project Structure](#5--project-structure)
-    - [6) 📄 License](#6--license)
-  - [🧩 Optional Sections](#-optional-sections)
-    - [📛 Badges](#-badges)
-    - [📸 Live / Demo](#-live--demo)
-    - [🛠️ Tech Stack](#️-tech-stack)
-    - [⚙️ Configuration](#️-configuration)
-    - [🤝 Contributing](#-contributing)
-    - [🧪 Testing](#-testing)
-    - [🧭 Roadmap](#-roadmap)
-    - [🙋‍♀️ FAQ / Known Issues](#️-faq--known-issues)
-  - [🧱 Formatting Rules](#-formatting-rules)
+- [README Style Guide](#readme-style-guide)
+  - [Table of Contents](#table-of-contents)
+  - [Required Sections](#required-sections)
+    - [1) Title](#1-title)
+    - [2) Overview](#2-overview)
+    - [3) Quick Start](#3-quick-start)
+    - [4) Usage / Scripts](#4-usage--scripts)
+    - [5) Project Structure](#5-project-structure)
+    - [6) License](#6-license)
+  - [Optional Sections](#optional-sections)
+    - [Badges](#badges)
+    - [Live / Demo](#live--demo)
+    - [Tech Stack](#tech-stack)
+    - [Configuration](#configuration)
+    - [Contributing](#contributing)
+    - [Testing](#testing)
+    - [Roadmap](#roadmap)
+    - [🙋FAQ / Known Issues](#faq--known-issues)
+  - [Formatting Rules](#formatting-rules)
   - [♿ Accessibility \& Tone](#-accessibility--tone)
-  - [🔧 Maintenance](#-maintenance)
-  - [👤 Author](#-author)
+  - [Maintenance](#maintenance)
+  - [Author](#author)
 
 ---
 
-## 🏷️ Required Sections
+## Required Sections
 
-### 1) 📘 Title
+### 1) Title
 
 One H1, clear and complete.
 
 - **Use:** Project name + short tagline.
 - **Example:** `# GetOneLiner — Tiny JSON jokes API`
 
-### 2) 🤓 Overview
+### 2) Overview
 
 1–3 sentences answering **what**, **why**, **who for**.
 
 - **Use:** State purpose and scope; link to docs if they exist.
 
-### 3) 🚀 Quick Start
+### 3) Quick Start
 
 Minimal steps to run in dev.
 
@@ -58,13 +58,13 @@ Minimal steps to run in dev.
   npm run dev
   ```
 
-### 4) 📜 Usage / Scripts
+### 4) Usage / Scripts
 
 How to use or run scripts.
 
 - **Use:** Table or hyphen lists with short, action-led descriptions.
 
-### 5) 📁 Project Structure
+### 5) Project Structure
 
 Show key folders only.
 
@@ -77,7 +77,7 @@ Show key folders only.
   └─ utils/         # Pure helpers
   ```
 
-### 6) 📄 License
+### 6) License
 
 Name the licence (e.g. MIT) or say "All rights reserved".
 
@@ -85,43 +85,43 @@ Name the licence (e.g. MIT) or say "All rights reserved".
 
 ---
 
-## 🧩 Optional Sections
+## Optional Sections
 
-### 📛 Badges
+### Badges
 
 High-value only (build, coverage, version).
 
-### 📸 Live / Demo
+### Live / Demo
 
 One link and/or one screenshot.
 
-### 🛠️ Tech Stack
+### Tech Stack
 
 - Bullets with versions if important.
 
-### ⚙️ Configuration
+### Configuration
 
 - List required env vars and defaults.
 
-### 🤝 Contributing
+### Contributing
 
 - How to propose changes; link to `CONTRIBUTING.md` if present.
 
-### 🧪 Testing
+### Testing
 
 - How to run tests; note frameworks.
 
-### 🧭 Roadmap
+### Roadmap
 
 - Only if actively maintained; use short checklists.
 
-### 🙋‍♀️ FAQ / Known Issues
+### 🙋FAQ / Known Issues
 
 - Small, focused lists.
 
 ---
 
-## 🧱 Formatting Rules
+## Formatting Rules
 
 - **Headings:** ATX `#` style; **one H1 per file**. Space before/after headings.
 - **Lists:** Use **hyphens (`-`)** for unordered lists.
@@ -147,7 +147,7 @@ One link and/or one screenshot.
 
 ---
 
-## 🔧 Maintenance
+## Maintenance
 
 - Treat README as **living**: update with meaningful changes.
 - Remove stale sections quickly ("better over best").
@@ -155,6 +155,6 @@ One link and/or one screenshot.
 
 ---
 
-## 👤 Author
+## Author
 
 Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)

@@ -1,25 +1,25 @@
-# 📝 Git Commit Style Guide
+# Git Commit Style Guide
 
 Short, practical rules for **clear, consistent commits**.
 Based on [Conventional Commits](https://www.conventionalcommits.org/), with extras for **UX** and **accessibility**.
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
-- [📝 Git Commit Style Guide](#-git-commit-style-guide)
-  - [📖 Table of Contents](#-table-of-contents)
-  - [📖 Overview](#-overview)
-  - [✨ Format](#-format)
-  - [✅ Types](#-types)
-  - [🗂 Scope (Optional)](#-scope-optional)
-    - [🔍 Examples](#-examples)
-  - [🧠 Summary (Required)](#-summary-required)
-    - [✅ Good Examples](#-good-examples)
-    - [❌ Avoid](#-avoid)
-  - [📝 Body (Optional)](#-body-optional)
-  - [🚨 Footer (Optional)](#-footer-optional)
-  - [💡 Examples by Type](#-examples-by-type)
+- [Git Commit Style Guide](#git-commit-style-guide)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Format](#format)
+  - [Types](#types)
+  - [Scope (Optional)](#scope-optional)
+    - [Examples](#examples)
+  - [Summary (Required)](#summary-required)
+    - [Good Examples](#good-examples)
+    - [Avoid](#avoid)
+  - [Body (Optional)](#body-optional)
+  - [Footer (Optional)](#footer-optional)
+  - [Examples by Type](#examples-by-type)
     - [`feat`](#feat)
     - [`fix`](#fix)
     - [`docs`](#docs)
@@ -29,23 +29,23 @@ Based on [Conventional Commits](https://www.conventionalcommits.org/), with extr
     - [`chore`](#chore)
     - [`ux`](#ux)
     - [`a11y`](#a11y)
-  - [📁 Optional Template](#-optional-template)
-  - [⚠️ Common Mistakes](#️-common-mistakes)
-  - [🔚 Summary](#-summary)
+  - [Optional Template](#optional-template)
+  - [Common Mistakes](#common-mistakes)
+  - [Summary](#summary)
     - [Why this matters](#why-this-matters)
-  - [🔧 Maintenance](#-maintenance)
-  - [👤 Author](#-author)
+  - [Maintenance](#maintenance)
+  - [Author](#author)
 
 ---
 
-## 📖 Overview
+## Overview
 
 A good commit message tells **what** changed and **why**.
 It helps you trace intent, debug faster, and keep a clean history.
 
 ---
 
-## ✨ Format
+## Format
 
 ```text
 <type>[optional scope]: <short summary>
@@ -60,7 +60,7 @@ Wrap body lines at **~72 chars**.
 
 ---
 
-## ✅ Types
+## Types
 
 | Type       | Purpose | Example |
 | ---------- | ------- | ------- |
@@ -79,7 +79,7 @@ Wrap body lines at **~72 chars**.
 
 ---
 
-## 🗂 Scope (Optional)
+## Scope (Optional)
 
 Describe **where** the change happens — a module, file, or feature.
 
@@ -87,7 +87,7 @@ Describe **where** the change happens — a module, file, or feature.
 - Keep it short (1–2 words)
 - Skip if it adds no clarity
 
-### 🔍 Examples
+### Examples
 
 ```bash
 feat(layout): add hero image support
@@ -97,14 +97,14 @@ docs(api): update JSDoc for getUserToken
 
 ---
 
-## 🧠 Summary (Required)
+## Summary (Required)
 
 - Use **imperative mood** — “add”, not “added”
 - **No punctuation** at the end
 - Stay under **50 chars** when possible
 - Say **what** changed, not **how**
 
-### ✅ Good Examples
+### Good Examples
 
 ```bash
 feat: add reading time calculation
@@ -112,7 +112,7 @@ fix(header): show fallback image if missing
 refactor: move logic to useEffect hook
 ```
 
-### ❌ Avoid
+### Avoid
 
 ```bash
 added new layout feature
@@ -122,7 +122,7 @@ Refactored layout logic
 
 ---
 
-## 📝 Body (Optional)
+## Body (Optional)
 
 Explain the **reasoning** behind the change.
 
@@ -136,7 +136,7 @@ after render for better React compatibility.
 
 ---
 
-## 🚨 Footer (Optional)
+## Footer (Optional)
 
 Use for issue links or breaking changes.
 
@@ -148,7 +148,7 @@ Closes #42
 
 ---
 
-## 💡 Examples by Type
+## Examples by Type
 
 ### `feat`
 
@@ -209,7 +209,7 @@ a11y(layout): ensure contrast in dark mode
 
 ---
 
-## 📁 Optional Template
+## Optional Template
 
 ```bash
 # .gitmessage
@@ -228,7 +228,7 @@ git config --global commit.template ~/.gitmessage
 
 ---
 
-## ⚠️ Common Mistakes
+## Common Mistakes
 
 | Mistake | Why it’s a problem | Correct form |
 | ------- | ------------------ | ------------ |
@@ -239,9 +239,9 @@ git config --global commit.template ~/.gitmessage
 
 ---
 
-## 🔚 Summary
+## Summary
 
-| ✅ Do | ❌ Avoid |
+| Do | Avoid |
 | ---- | -------- |
 | Use imperative mood | Past tense |
 | Keep one idea per commit | “misc fixes” |
@@ -258,7 +258,7 @@ git config --global commit.template ~/.gitmessage
 
 ---
 
-## 🔧 Maintenance
+## Maintenance
 
 - Treat this guide as **living** — update it when new conventions or tools emerge.
 - Review periodically to ensure it matches actual commit practices.
@@ -268,6 +268,6 @@ git config --global commit.template ~/.gitmessage
 
 ---
 
-## 👤 Author
+## Author
 
 Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)

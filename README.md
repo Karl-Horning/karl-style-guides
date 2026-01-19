@@ -1,4 +1,4 @@
-# 🧭 Developer Style Guides
+# Developer Style Guides
 
 [![Lint & Spellcheck](https://github.com/Karl-Horning/karl-style-guides/actions/workflows/lint.yml/badge.svg)](https://github.com/Karl-Horning/karl-style-guides/actions/workflows/lint.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -8,25 +8,25 @@ This repository collects style guides and templates designed to make text-based 
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
-- [🧭 Developer Style Guides](#-developer-style-guides)
-  - [📖 Table of Contents](#-table-of-contents)
-  - [🤓 Overview](#-overview)
-  - [🚀 Quick Start](#-quick-start)
-  - [🧩 Contents](#-contents)
-    - [📚 Guides](#-guides)
-    - [🧠 Templates](#-templates)
-    - [🧪 Examples](#-examples)
-  - [🧱 Formatting Rules](#-formatting-rules)
-  - [♿ Accessibility \& Tone](#-accessibility--tone)
-  - [🔧 Maintenance](#-maintenance)
-  - [🧭 Adoption (teams)](#-adoption-teams)
-  - [👤 Author](#-author)
+- [Developer Style Guides](#developer-style-guides)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Quick Start](#quick-start)
+  - [Contents](#contents)
+    - [Guides](#guides)
+    - [Templates](#templates)
+    - [Examples](#examples)
+  - [Formatting Rules](#formatting-rules)
+  - [Accessibility \& Tone](#accessibility--tone)
+  - [Maintenance](#maintenance)
+  - [Adoption (teams)](#adoption-teams)
+  - [Author](#author)
 
 ---
 
-## 🤓 Overview
+## Overview
 
 A personal collection of **living documents** defining standards for writing and maintaining:
 
@@ -38,7 +38,7 @@ They follow accessibility and readability principles to reduce cognitive load an
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 Clone the repository and explore the `guides/` folder:
 
@@ -55,29 +55,29 @@ cp -r templates/* ~/your-project/
 
 ---
 
-## 🧩 Contents
+## Contents
 
-### 📚 Guides
+### Guides
 
 - **README Style Guide** — `guides/readme_style_guide.md`
 - **Git Commit Style Guide** — `guides/git_commit_style_guide.md`
 - **Comments & Documentation Style (JS/TS)** — `guides/comments_and_documentation_style_js_ts.md`
   *(Adapted in part from [Google’s TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html#comments-documentation))*
 
-### 🧠 Templates
+### Templates
 
 - `templates/README_TEMPLATE.md`
 - `templates/.gitmessage`
 - `templates/JSDOC_EXAMPLES.md`
 
-### 🧪 Examples
+### Examples
 
 - `examples/before-after-readme.md`
 - `examples/commit-messages.md`
 
 ---
 
-## 🧱 Formatting Rules
+## Formatting Rules
 
 - **Headings:** One H1 per file; clear emoji for quick scanning.
 - **Lists:** Use hyphens (`-`) for unordered lists.
@@ -87,7 +87,7 @@ cp -r templates/* ~/your-project/
 
 ---
 
-## ♿ Accessibility & Tone
+## Accessibility & Tone
 
 - Avoid **smart quotes** and **curly apostrophes** — use straight quotes (`"` and `'`) for readability.
   ⚠️ *(Does not apply to code in backticks.)*
@@ -99,7 +99,7 @@ cp -r templates/* ~/your-project/
 
 ---
 
-## 🔧 Maintenance
+## Maintenance
 
 - Treat this repository as **living** — update when new conventions or tools emerge.
 - Keep examples accurate and templates usable.
@@ -108,7 +108,7 @@ cp -r templates/* ~/your-project/
 
 ---
 
-## 🧭 Adoption (teams)
+## Adoption (teams)
 
 Start small:
 
@@ -119,6 +119,6 @@ Start small:
 
 ---
 
-## 👤 Author
+## Author
 
 Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)

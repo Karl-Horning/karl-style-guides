@@ -1,10 +1,10 @@
-# 🧭 README Examples — Before / After
+# README Examples — Before / After
 
 Short examples showing how the README Style Guide improves clarity and accessibility.
 
 ---
 
-## ❌ Before
+## Before
 
 - Long paragraphs without structure.
 - No Quick Start or Usage section.
@@ -15,22 +15,22 @@ Short examples showing how the README Style Guide improves clarity and accessibi
 
 ---
 
-## ✅ After
+## After
 
-### 🤓 Overview
+### Overview
 
 A small tool for converting CSV files to JSON.
 
-### 🚀 Quick Start
+### Quick Start
 
 `npm install`
 `npm run convert input.csv > output.json`
 
-### 📜 Usage / Scripts
+### Usage / Scripts
 
 - `npm run convert <file>` — convert CSV to JSON.
 
-### 📁 Project Structure
+### Project Structure
 
 ```text
 
@@ -40,6 +40,6 @@ src/
 
 ```
 
-### 📄 License
+### License
 
 [MIT](../LICENSE)

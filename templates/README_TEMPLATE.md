@@ -1,29 +1,29 @@
-# 🧭 &lt;Project Name&gt;: &lt;short tagline&gt;
+# &lt;Project Name&gt;: &lt;short tagline&gt;
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
-- [🧭 \<Project Name\>: \<short tagline\>](#-project-name-short-tagline)
-  - [📖 Table of Contents](#-table-of-contents)
-  - [🤓 Overview](#-overview)
-  - [🚀 Quick Start](#-quick-start)
-  - [📜 Usage / Scripts](#-usage--scripts)
-  - [📁 Project Structure](#-project-structure)
-  - [⚙️ Configuration](#️-configuration)
-  - [🧪 Testing](#-testing)
-  - [🔧 Maintenance](#-maintenance)
-  - [📄 License](#-license)
+- [\<Project Name\>: \<short tagline\>](#project-name-short-tagline)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Quick Start](#quick-start)
+  - [Usage / Scripts](#usage--scripts)
+  - [Project Structure](#project-structure)
+  - [Configuration](#configuration)
+  - [Testing](#testing)
+  - [Maintenance](#maintenance)
+  - [License](#license)
 
 ---
 
-## 🤓 Overview
+## Overview
 
 1–3 sentences: what, why, who for.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 Command examples:
 
@@ -32,14 +32,14 @@ Command examples:
 
 ---
 
-## 📜 Usage / Scripts
+## Usage / Scripts
 
 - `npm run &lt;script&gt;` — what it does
 - `npm run &lt;script&gt;` — what it does
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 Example:
 
@@ -53,21 +53,21 @@ src/
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 - `ENV_VAR` — purpose (default)
 - `ENV_VAR` — purpose (default)
 
 ---
 
-## 🧪 Testing
+## Testing
 
 - How to run tests.
 - Note frameworks.
 
 ---
 
-## 🔧 Maintenance
+## Maintenance
 
 - Keep this README current with meaningful changes.
 - Remove stale sections quickly.
@@ -75,6 +75,6 @@ src/
 
 ---
 
-## 📄 License
+## License
 
 [MIT](../LICENSE)

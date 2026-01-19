@@ -1,37 +1,37 @@
-# 📝 Comments & Documentation Style (JS/TS)
+# Comments & Documentation Style (JS/TS)
 
 Simple rules for **clear, accessible, tool-friendly** docs. Adapted in part from [Google’s TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html#comments-documentation).
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
-- [📝 Comments \& Documentation Style (JS/TS)](#-comments--documentation-style-jsts)
-  - [📖 Table of Contents](#-table-of-contents)
-  - [📌 Scope \& Intent](#-scope--intent)
-  - [🧱 JSDoc: General Rules](#-jsdoc-general-rules)
+- [Comments \& Documentation Style (JS/TS)](#comments--documentation-style-jsts)
+  - [Table of Contents](#table-of-contents)
+  - [Scope \& Intent](#scope--intent)
+  - [JSDoc: General Rules](#jsdoc-general-rules)
     - [Bad list in prose](#bad-list-in-prose)
     - [Good Markdown list](#good-markdown-list)
-  - [🧩 JSDoc in TypeScript vs JavaScript](#-jsdoc-in-typescript-vs-javascript)
+  - [JSDoc in TypeScript vs JavaScript](#jsdoc-in-typescript-vs-javascript)
     - [TS example](#ts-example)
     - [JS example](#js-example)
-  - [🔧 Functions \& Methods](#-functions--methods)
-  - [🧱 Classes \& Parameter Properties (TS)](#-classes--parameter-properties-ts)
-  - [🗂 Module (File) Docs](#-module-file-docs)
-  - [💬 Line Comments (`//`)](#-line-comments-)
-  - [🧭 Call-site "parameter name" comments](#-call-site-parameter-name-comments)
-  - [🎯 Decorators (TS/Frameworks)](#-decorators-tsframeworks)
-  - [♿ Accessibility Guidelines](#-accessibility-guidelines)
-  - [✅ Do / ❌ Don't](#-do---dont)
-  - [🧪 Quick Examples](#-quick-examples)
+  - [Functions \& Methods](#functions--methods)
+  - [Classes \& Parameter Properties (TS)](#classes--parameter-properties-ts)
+  - [Module (File) Docs](#module-file-docs)
+  - [Line Comments (`//`)](#line-comments-)
+  - [Call-site "parameter name" comments](#call-site-parameter-name-comments)
+  - [Decorators (TS/Frameworks)](#decorators-tsframeworks)
+  - [Accessibility Guidelines](#accessibility-guidelines)
+  - [Do / Don't](#do--dont)
+  - [Quick Examples](#quick-examples)
     - [Good single-line](#good-single-line)
     - [Good multi-line with tags](#good-multi-line-with-tags)
-  - [🔧 Maintenance](#-maintenance)
-  - [👤 Author](#-author)
+  - [Maintenance](#maintenance)
+  - [Author](#author)
 
 ---
 
-## 📌 Scope & Intent
+## Scope & Intent
 
 - **JSDoc (`/** … */`)** → **API docs** users of the code should read.
 - **Line comments (`// …`)** → **implementation notes** for maintainers.
@@ -39,7 +39,7 @@ Simple rules for **clear, accessible, tool-friendly** docs. Adapted in part from
 
 ---
 
-## 🧱 JSDoc: General Rules
+## JSDoc: General Rules
 
 - First line is a **complete sentence in third person**, ending with a **period**.
 - Prefer **imperative voice** ("Return…" instead of "Returns…").
@@ -76,7 +76,7 @@ Simple rules for **clear, accessible, tool-friendly** docs. Adapted in part from
 
 ---
 
-## 🧩 JSDoc in TypeScript vs JavaScript
+## JSDoc in TypeScript vs JavaScript
 
 - **TypeScript:** **do not duplicate types** in JSDoc. No `@param {Type}`.
 - **JavaScript:** JSDoc **may include types** to aid tooling.
@@ -97,7 +97,7 @@ export function getAuthors(jokes) { /* … */ }
 
 ---
 
-## 🔧 Functions & Methods
+## Functions & Methods
 
 - Method descriptions **start with a verb phrase** ("Return…", "Filter…").
 - Omit `@param/@returns` **if the name/signature is obvious**; include when it adds meaning.
@@ -117,7 +117,7 @@ export function filterJokes(jokes, opts) { /* … */ }
 
 ---
 
-## 🧱 Classes & Parameter Properties (TS)
+## Classes & Parameter Properties (TS)
 
 - Class JSDoc explains **how/when** to use it.
 - For **parameter properties**, document with `@param`.
@@ -132,7 +132,7 @@ export class JokeCache {
 
 ---
 
-## 🗂 Module (File) Docs
+## Module (File) Docs
 
 - Every file that exports symbols should start with a `@file` or `@fileoverview` JSDoc.
 - The first line must be a **short, complete sentence** ending with a **period**.
@@ -149,7 +149,7 @@ export class JokeCache {
 
 ---
 
-## 💬 Line Comments (`//`)
+## Line Comments (`//`)
 
 - Explain **why**, not the obvious **what**.
 - Avoid restating logic or variable names; focus on reasoning or constraints.
@@ -162,7 +162,7 @@ const limit = Math.min(100, Math.max(10, Number(q.limit) || 20));
 
 ---
 
-## 🧭 Call-site "parameter name" comments
+## Call-site "parameter name" comments
 
 Use when the value's intent isn't obvious.
 
@@ -174,7 +174,7 @@ Prefer redesigning the API to accept an object if this appears often.
 
 ---
 
-## 🎯 Decorators (TS/Frameworks)
+## Decorators (TS/Frameworks)
 
 Place JSDoc **before** decorators; never between decorator and declaration.
 
@@ -186,7 +186,7 @@ export class FooComponent {}
 
 ---
 
-## ♿ Accessibility Guidelines
+## Accessibility Guidelines
 
 - Write **short, concrete** sentences; avoid jargon.
 - Prefer **descriptive lists** over dense prose.
@@ -196,18 +196,23 @@ export class FooComponent {}
 
 ---
 
-## ✅ Do / ❌ Don't
+## Do / Don't
 
-- ✅ Document exports; explain intent and constraints.
-- ✅ Use Markdown lists in JSDoc.
-- ✅ Stack `//` for multi-line implementation notes.
-- ❌ Don't restate names/types in TS JSDoc.
-- ❌ Don't use ASCII art boxes.
-- ❌ Don't narrate trivial code.
+Do:
+
+- Document exports; explain intent and constraints.
+- Use Markdown lists in JSDoc.
+- Stack `//` for multi-line implementation notes.
+
+Don't:
+
+- Don't restate names/types in TS JSDoc.
+- Don't use ASCII art boxes.
+- Don't narrate trivial code.
 
 ---
 
-## 🧪 Quick Examples
+## Quick Examples
 
 ### Good single-line
 
@@ -233,7 +238,7 @@ export function sendJson(res, data, status = 200) { /* … */ }
 
 ---
 
-## 🔧 Maintenance
+## Maintenance
 
 - Treat this guide as **living** — update it when new conventions or tools emerge.
 - Keep examples **accurate and copy-pasteable**.
@@ -243,6 +248,6 @@ export function sendJson(res, data, status = 200) { /* … */ }
 
 ---
 
-## 👤 Author
+## Author
 
 Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)

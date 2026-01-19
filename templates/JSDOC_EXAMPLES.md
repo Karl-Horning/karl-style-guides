@@ -1,10 +1,10 @@
-# 🧾 JSDoc Examples (JS/TS)
+# JSDoc Examples (JS/TS)
 
 Examples of clear, copy-pasteable JSDoc for JavaScript and TypeScript projects.
 
 ---
 
-## 🟨 JavaScript
+## JavaScript
 
 ```js
 /**
@@ -20,7 +20,7 @@ export function getRandom(items) {
 
 ---
 
-## 🟦 TypeScript
+## TypeScript
 
 ```ts
 /**
