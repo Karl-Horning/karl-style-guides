@@ -1,45 +1,42 @@
-# Git Commit Style Guide
+# Git commit style guide
 
-Short, practical rules for **clear, consistent commits**.
-Based on [Conventional Commits](https://www.conventionalcommits.org/), with extras for **UX** and **accessibility**.
+This document provides practical rules for writing clear and consistent commit messages. It is based on the Conventional Commits specification, with specific additions for user experience and accessibility.
 
 ## Table of Contents
 
-- [Git Commit Style Guide](#git-commit-style-guide)
+- [Git commit style guide](#git-commit-style-guide)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Format](#format)
   - [Types](#types)
-  - [Scope (Optional)](#scope-optional)
-    - [Examples](#examples)
-  - [Summary (Required)](#summary-required)
-    - [Good Examples](#good-examples)
-    - [Avoid](#avoid)
-  - [Body (Optional)](#body-optional)
-  - [Footer (Optional)](#footer-optional)
-  - [Examples by Type](#examples-by-type)
-    - [`feat`](#feat)
-    - [`fix`](#fix)
-    - [`docs`](#docs)
-    - [`style`](#style)
-    - [`refactor`](#refactor)
-    - [`test`](#test)
-    - [`chore`](#chore)
-    - [`ux`](#ux)
-    - [`a11y`](#a11y)
-  - [Optional Template](#optional-template)
-  - [Common Mistakes](#common-mistakes)
+  - [Scope](#scope)
+    - [Scope examples](#scope-examples)
   - [Summary](#summary)
-    - [Why this matters](#why-this-matters)
+    - [Recommended summaries](#recommended-summaries)
+    - [Avoid these patterns](#avoid-these-patterns)
+  - [Body](#body)
+  - [Footer](#footer)
+  - [Examples by type](#examples-by-type)
+    - [feat](#feat)
+    - [fix](#fix)
+    - [docs](#docs)
+    - [style](#style)
+    - [refactor](#refactor)
+    - [test](#test)
+    - [chore](#chore)
+    - [ux](#ux)
+    - [a11y](#a11y)
+  - [Configuration template](#configuration-template)
+  - [Common mistakes](#common-mistakes)
   - [Maintenance](#maintenance)
-  - [Author](#author)
 
 ## Overview
 
-A good commit message tells **what** changed and **why**.
-It helps you trace intent, debug faster, and keep a clean history.
+A documented commit message explains what changed and why it changed. This practice assists in tracing intent, accelerating debugging, and maintaining a legible project history.
 
 ## Format
+
+Each commit must encompass one clear objective. Wrap body lines at approximately 72 characters.
 
 ```text
 <type>[optional scope]: <short summary>
@@ -49,35 +46,31 @@ It helps you trace intent, debug faster, and keep a clean history.
 [optional footer(s)]
 ```
 
-Each commit should do **one clear thing**.
-Wrap body lines at **~72 chars**.
-
 ## Types
 
-| Type       | Purpose | Example |
-| ---------- | ------- | ------- |
-| `feat`     | Add a new feature | `feat(api): add search by region` |
-| `fix`      | Correct a bug | `fix(header): prevent flicker on load` |
-| `refactor` | Improve structure or clarity without changing behaviour | `refactor(utils): extract parseDate helper` |
-| `docs`     | Update documentation only | `docs: add setup steps to README` |
-| `style`    | Change formatting or whitespace only | `style: format files with Prettier` |
-| `test`     | Add or modify tests | `test(api): add missing auth tests` |
-| `chore`    | Maintenance or tooling updates | `chore: update ESLint config` |
-| `build`    | Build system or dependency changes | `build: upgrade Next.js to v15` |
-| `ci`       | CI/CD config updates | `ci: fix deploy job on main` |
-| `perf`     | Performance improvements | `perf(layout): memoise expensive render` |
-| `ux`       | Visual or usability tweaks | `ux(nav): improve focus outline visibility` |
-| `a11y`     | Accessibility fixes (ARIA, colour, keyboard) | `a11y(button): add aria-pressed state` |
+| Type | Purpose | Example |
+| --- | --- | --- |
+| `feat` | Add a new feature | `feat(api): add search by region` |
+| `fix` | Correct a bug | `fix(header): prevent flicker on load` |
+| `refactor` | Improve structure or clarity without changing behavior | `refactor(utils): extract parseDate helper` |
+| `docs` | Update documentation only | `docs: add setup steps to README` |
+| `style` | Change formatting or whitespace only | `style: format files with Prettier` |
+| `test` | Add or modify tests | `test(api): add missing auth tests` |
+| `chore` | Maintenance or tooling updates | `chore: update ESLint config` |
+| `build` | Build system or dependency changes | `build: upgrade Next.js to v15` |
+| `ci` | CI/CD config updates | `ci: fix deploy job on main` |
+| `perf` | Performance improvements | `perf(layout): memoize expensive render` |
+| `ux` | Visual or usability tweaks | `ux(nav): improve focus outline visibility` |
+| `a11y` | Accessibility fixes (ARIA, color, keyboard) | `a11y(button): add aria-pressed state` |
 
-## Scope (Optional)
+## Scope
 
-Describe **where** the change happens — a module, file, or feature.
+Describe where the change happens, such as a module, file, or feature. Skip the scope if it adds no clarity.
 
-- Use lowercase
-- Keep it short (1–2 words)
-- Skip if it adds no clarity
+- Use lowercase text.
+- Keep the description to one or two words.
 
-### Examples
+### Scope examples
 
 ```bash
 feat(layout): add hero image support
@@ -85,14 +78,15 @@ fix(reading-time): correct logic for empty content
 docs(api): update JSDoc for getUserToken
 ```
 
-## Summary (Required)
+## Summary
 
-- Use **imperative mood** — “add”, not “added”
-- **No punctuation** at the end
-- Stay under **50 chars** when possible
-- Say **what** changed, not **how**
+The summary provides a brief explanation of the change. State what changed, not how it was implemented.
 
-### Good Examples
+- Use the imperative mood (e.g., "add", not "added").
+- Do not use punctuation at the end of the line.
+- Keep the character count under 50.
+
+### Recommended summaries
 
 ```bash
 feat: add reading time calculation
@@ -100,7 +94,7 @@ fix(header): show fallback image if missing
 refactor: move logic to useEffect hook
 ```
 
-### Avoid
+### Avoid these patterns
 
 ```bash
 added new layout feature
@@ -108,9 +102,9 @@ fixes reading-time bug.
 Refactored layout logic
 ```
 
-## Body (Optional)
+## Body
 
-Explain the **reasoning** behind the change.
+Use the body to explain the reasoning behind the code change.
 
 ```bash
 refactor(layout): move reading time logic to useEffect
@@ -120,9 +114,9 @@ causing hydration issues. It now runs in a useEffect hook
 after render for better React compatibility.
 ```
 
-## Footer (Optional)
+## Footer
 
-Use for issue links or breaking changes.
+Use the footer to document issue links or breaking changes.
 
 ```bash
 BREAKING CHANGE: removed deprecated layout prop
@@ -130,66 +124,68 @@ BREAKING CHANGE: removed deprecated layout prop
 Closes #42
 ```
 
-## Examples by Type
+## Examples by type
 
-### `feat`
+### feat
 
 ```bash
 feat(layout): add sidebar toggle for mobile
 feat(a11y): support high contrast mode
 ```
 
-### `fix`
+### fix
 
 ```bash
 fix(header): prevent flicker on page load
 fix(api): handle missing query params safely
 ```
 
-### `docs`
+### docs
 
 ```bash
 docs: update README quick start
 docs(api): clarify prop defaults
 ```
 
-### `style`
+### style
 
 ```bash
 style: reformat layout files with Prettier
 ```
 
-### `refactor`
+### refactor
 
 ```bash
 refactor(api): rename variables for clarity
 ```
 
-### `test`
+### test
 
 ```bash
 test(layout): add snapshot test
 ```
 
-### `chore`
+### chore
 
 ```bash
 chore: update Tailwind to v3.4.0
 ```
 
-### `ux`
+### ux
 
 ```bash
 ux(header): improve spacing between title and metadata
 ```
 
-### `a11y`
+### a11y
 
 ```bash
 a11y(layout): ensure contrast in dark mode
 ```
 
-## Optional Template
+## Configuration template
+
+You can enforce this structure locally using a Git template.
 
 ```bash
 # .gitmessage
@@ -200,44 +196,25 @@ a11y(layout): ensure contrast in dark mode
 <footer>
 ```
 
-Enable it globally:
+Enable the template globally using the following command:
 
 ```bash
 git config --global commit.template ~/.gitmessage
 ```
 
-## Common Mistakes
+## Common mistakes
 
-| Mistake | Why it’s a problem | Correct form |
-| ------- | ------------------ | ------------ |
+| Mistake | Issue | Correct form |
+| --- | --- | --- |
 | `Added new feature` | Uses past tense | `feat: add new feature` |
 | `fix: fixed bug` | Repeats type | `fix: correct error in API call` |
 | `chore: misc updates` | Too vague | `chore(deps): bump Next.js` |
-| `feat(layout):` *(empty)* | Missing summary | `feat(layout): add sidebar toggle` |
-
-## Summary
-
-| Do | Avoid |
-| ---- | -------- |
-| Use imperative mood | Past tense |
-| Keep one idea per commit | “misc fixes” |
-| Add scope for clarity | Over-describing |
-| Keep format consistent | Skipping colons or types |
-
-### Why this matters
-
-- Makes history searchable
-- Clarifies intent
-- Reduces mental load in reviews
+| `feat(layout):` | Missing summary | `feat(layout): add sidebar toggle` |
 
 ## Maintenance
 
-- Treat this guide as **living** — update it when new conventions or tools emerge.
-- Review periodically to ensure it matches actual commit practices.
-- Add new **types** or **scopes** only when they serve clear value.
-- Keep examples **copy-pasteable** and tested.
-- Remove or update any conventions that no longer reflect team standards.
-
-## Author
-
-Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)
+- Treat this guide as a living document and update it when new conventions emerge.
+- Review the document periodically to ensure it matches actual commit practices.
+- Add new types or scopes only when they serve clear structural value.
+- Keep all examples functional and copy-pasteable.
+- Remove conventions that no longer reflect active team standards.
