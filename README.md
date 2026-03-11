@@ -6,8 +6,6 @@
 Concise, practical rules for **readable, consistent, and accessible** documentation and commits.
 This repository collects style guides and templates designed to make text-based resources easier to **read, navigate, and maintain**.
 
----
-
 ## Table of Contents
 
 - [Developer Style Guides](#developer-style-guides)
@@ -24,8 +22,6 @@ This repository collects style guides and templates designed to make text-based 
   - [Adoption (teams)](#adoption-teams)
   - [Author](#author)
 
----
-
 ## Overview
 
 A personal collection of **living documents** defining standards for writing and maintaining:
@@ -35,8 +31,6 @@ A personal collection of **living documents** defining standards for writing and
 - Code comments and JSDoc in JS/TS projects
 
 They follow accessibility and readability principles to reduce cognitive load and improve collaboration.
-
----
 
 ## Quick Start
 
@@ -52,8 +46,6 @@ Optionally copy templates for your own projects:
 ```bash
 cp -r templates/* ~/your-project/
 ```
-
----
 
 ## Contents
 
@@ -75,8 +67,6 @@ cp -r templates/* ~/your-project/
 - `examples/before-after-readme.md`
 - `examples/commit-messages.md`
 
----
-
 ## Formatting Rules
 
 - **Headings:** One H1 per file; clear emoji for quick scanning.
@@ -84,8 +74,6 @@ cp -r templates/* ~/your-project/
 - **Code blocks:** Use fenced code with a language tag.
 - **Links:** Prefer absolute or repo-relative links.
 - **Tables:** Only when data requires grid layout.
-
----
 
 ## Accessibility & Tone
 
@@ -97,16 +85,12 @@ cp -r templates/* ~/your-project/
 - Write **short, direct sentences** and prefer plain English.
 - Keep examples **copy-pasteable** and tested.
 
----
-
 ## Maintenance
 
 - Treat this repository as **living** — update when new conventions or tools emerge.
 - Keep examples accurate and templates usable.
 - Align terminology with real project usage.
 - Remove or revise outdated rules promptly.
-
----
 
 ## Adoption (teams)
 
@@ -116,8 +100,6 @@ Start small:
 1. Add the CI from `.github/workflows/lint.yml`.
 1. Announce the change and link these guides in your team wiki.
 1. Iterate — these are **living documents**; keep PRs small and focused.
-
----
 
 ## Author
 

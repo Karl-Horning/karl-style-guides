@@ -3,8 +3,6 @@
 Short, practical rules for **clear, consistent commits**.
 Based on [Conventional Commits](https://www.conventionalcommits.org/), with extras for **UX** and **accessibility**.
 
----
-
 ## Table of Contents
 
 - [Git Commit Style Guide](#git-commit-style-guide)
@@ -36,14 +34,10 @@ Based on [Conventional Commits](https://www.conventionalcommits.org/), with extr
   - [Maintenance](#maintenance)
   - [Author](#author)
 
----
-
 ## Overview
 
 A good commit message tells **what** changed and **why**.
 It helps you trace intent, debug faster, and keep a clean history.
-
----
 
 ## Format
 
@@ -57,8 +51,6 @@ It helps you trace intent, debug faster, and keep a clean history.
 
 Each commit should do **one clear thing**.
 Wrap body lines at **~72 chars**.
-
----
 
 ## Types
 
@@ -77,8 +69,6 @@ Wrap body lines at **~72 chars**.
 | `ux`       | Visual or usability tweaks | `ux(nav): improve focus outline visibility` |
 | `a11y`     | Accessibility fixes (ARIA, colour, keyboard) | `a11y(button): add aria-pressed state` |
 
----
-
 ## Scope (Optional)
 
 Describe **where** the change happens — a module, file, or feature.
@@ -94,8 +84,6 @@ feat(layout): add hero image support
 fix(reading-time): correct logic for empty content
 docs(api): update JSDoc for getUserToken
 ```
-
----
 
 ## Summary (Required)
 
@@ -120,8 +108,6 @@ fixes reading-time bug.
 Refactored layout logic
 ```
 
----
-
 ## Body (Optional)
 
 Explain the **reasoning** behind the change.
@@ -134,8 +120,6 @@ causing hydration issues. It now runs in a useEffect hook
 after render for better React compatibility.
 ```
 
----
-
 ## Footer (Optional)
 
 Use for issue links or breaking changes.
@@ -145,8 +129,6 @@ BREAKING CHANGE: removed deprecated layout prop
 
 Closes #42
 ```
-
----
 
 ## Examples by Type
 
@@ -207,8 +189,6 @@ ux(header): improve spacing between title and metadata
 a11y(layout): ensure contrast in dark mode
 ```
 
----
-
 ## Optional Template
 
 ```bash
@@ -226,8 +206,6 @@ Enable it globally:
 git config --global commit.template ~/.gitmessage
 ```
 
----
-
 ## Common Mistakes
 
 | Mistake | Why it’s a problem | Correct form |
@@ -236,8 +214,6 @@ git config --global commit.template ~/.gitmessage
 | `fix: fixed bug` | Repeats type | `fix: correct error in API call` |
 | `chore: misc updates` | Too vague | `chore(deps): bump Next.js` |
 | `feat(layout):` *(empty)* | Missing summary | `feat(layout): add sidebar toggle` |
-
----
 
 ## Summary
 
@@ -248,15 +224,11 @@ git config --global commit.template ~/.gitmessage
 | Add scope for clarity | Over-describing |
 | Keep format consistent | Skipping colons or types |
 
----
-
 ### Why this matters
 
 - Makes history searchable
 - Clarifies intent
 - Reduces mental load in reviews
-
----
 
 ## Maintenance
 
@@ -265,8 +237,6 @@ git config --global commit.template ~/.gitmessage
 - Add new **types** or **scopes** only when they serve clear value.
 - Keep examples **copy-pasteable** and tested.
 - Remove or update any conventions that no longer reflect team standards.
-
----
 
 ## Author
 

@@ -2,8 +2,6 @@
 
 Examples of clear, copy-pasteable JSDoc for JavaScript and TypeScript projects.
 
----
-
 ## JavaScript
 
 ```js
@@ -17,8 +15,6 @@ export function getRandom(items) {
   return items[Math.floor(Math.random() * items.length)];
 }
 ```
-
----
 
 ## TypeScript
 

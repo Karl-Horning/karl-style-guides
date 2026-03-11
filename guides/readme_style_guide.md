@@ -2,8 +2,6 @@
 
 Short, practical rules for **clear, consistent, and accessible READMEs**. This guide is designed to make documents easier to **read, navigate, and maintain**, improving accessibility for all contributors and users.
 
----
-
 ## Table of Contents
 
 - [README Style Guide](#readme-style-guide)
@@ -23,13 +21,11 @@ Short, practical rules for **clear, consistent, and accessible READMEs**. This g
     - [Contributing](#contributing)
     - [Testing](#testing)
     - [Roadmap](#roadmap)
-    - [🙋FAQ / Known Issues](#faq--known-issues)
+    - [FAQ / Known Issues](#faq--known-issues)
   - [Formatting Rules](#formatting-rules)
   - [♿ Accessibility \& Tone](#-accessibility--tone)
   - [Maintenance](#maintenance)
   - [Author](#author)
-
----
 
 ## Required Sections
 
@@ -83,8 +79,6 @@ Name the licence (e.g. MIT) or say "All rights reserved".
 
 - **Use:** Link to `LICENSE`.
 
----
-
 ## Optional Sections
 
 ### Badges
@@ -115,11 +109,9 @@ One link and/or one screenshot.
 
 - Only if actively maintained; use short checklists.
 
-### 🙋FAQ / Known Issues
+### FAQ / Known Issues
 
 - Small, focused lists.
-
----
 
 ## Formatting Rules
 
@@ -130,8 +122,6 @@ One link and/or one screenshot.
 - **Links:** Prefer explicit repo-relative paths; avoid deep `../..` hops.
 - **Tables:** Only for real tabular data; otherwise use lists.
 - **Markdown over HTML:** Prefer plain Markdown for portability.
-
----
 
 ## ♿ Accessibility & Tone
 
@@ -145,15 +135,11 @@ One link and/or one screenshot.
 - Write **short, direct sentences** and avoid jargon where possible.
 - Ensure **copy-pasteable examples** — no placeholder text or truncated code.
 
----
-
 ## Maintenance
 
 - Treat README as **living**: update with meaningful changes.
 - Remove stale sections quickly ("better over best").
 - Keep examples **copy-pasteable** and tested.
-
----
 
 ## Author
 

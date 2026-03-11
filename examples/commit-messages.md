@@ -2,8 +2,6 @@
 
 Examples aligned with the Git Commit Style Guide.
 
----
-
 ## Good
 
 ```text
@@ -14,8 +12,6 @@ docs(readme): add Quick Start section
 a11y(docs): clarify alt text guidance
 
 ```
-
----
 
 ## Avoid
 

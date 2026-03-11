@@ -2,9 +2,7 @@
 
 > Concise rules for consistent, accessible, and maintainable CSS. Written in
 > plain English. Optimised for quick scanning and day‑to‑day use.
-
----
-
+>
 ## Table of Contents
 
 - [CSS Style Guide](#css-style-guide)
@@ -31,8 +29,6 @@
   - [20. References](#20-references)
   - [Appendix A – header block template](#appendix-a--header-block-template)
 
----
-
 ## 1. Principles
 
 - **Clarity over cleverness.** Prefer readable CSS to micro‑optimisations.
@@ -41,8 +37,6 @@
   specificity.
 - **Progressive enhancement.** New features with safe fallbacks.
 - **Single source of truth.** Centralise tokens (colour, spacing, type, motion).
-
----
 
 ## 2. File structure
 
@@ -56,8 +50,6 @@ styles/
 ```
 
 Load order (top → bottom): **core → layout → components → utilities → pages**.
-
----
 
 ## 3. Cascade layers
 
@@ -77,8 +69,6 @@ Declare the stack first. Keep rules inside layers.
 
 **Why**: predictable overrides and fewer specificity wars.
 
----
-
 ## 4. Naming
 
 - **Components**: `.c-thing` (e.g. `.c-card`, `.c-modal`).
@@ -89,8 +79,6 @@ Declare the stack first. Keep rules inside layers.
 - **JS hooks**: `[data-js="toggle"]` (never style by `js-` classes).
 
 Keep names **short, specific, lower‑case**, with hyphens.
-
----
 
 ## 5. Selectors & specificity
 
@@ -103,8 +91,6 @@ Keep names **short, specific, lower‑case**, with hyphens.
 ```
 
 - Avoid `!important` except in **utilities** (document why).
-
----
 
 ## 6. Tokens (custom properties)
 
@@ -131,8 +117,6 @@ Define in `@layer theme` under `:root`.
 
 Use tokens everywhere; avoid raw values in components.
 
----
-
 ## 7. Units & sizing
 
 - **rem** for type and spacing. **px** only for borders/hairlines.
@@ -143,8 +127,6 @@ Use tokens everywhere; avoid raw values in components.
 .c-hero { font-size: clamp(1rem, 1vw + 1rem, 1.5rem); }
 ```
 
----
-
 ## 8. Colour & contrast
 
 - Use tokens; derive variants with **HSL** or colour‑mix.
@@ -154,8 +136,6 @@ Use tokens everywhere; avoid raw values in components.
 ```css
 .c-button { background: var(--brand); color: white; }
 ```
-
----
 
 ## 9. Typography
 
@@ -169,15 +149,11 @@ Use tokens everywhere; avoid raw values in components.
 body { font-family: var(--font-body); }
 ```
 
----
-
 ## 10. Layout
 
 - Prefer **Grid** for page and complex layout; **Flexbox** for one‑dimensional.
 - Use content‑driven gaps: `gap: var(--space-400);`
 - Avoid fixed heights; use min/max and intrinsic sizing.
-
----
 
 ## 11. Motion & animation
 
@@ -192,8 +168,6 @@ body { font-family: var(--font-body); }
 
 For SVG geometry animation, document support and provide sensible fallbacks.
 
----
-
 ## 12. Accessibility
 
 - Always include reduced motion and focus‑visible rules.
@@ -203,8 +177,6 @@ For SVG geometry animation, document support and provide sensible fallbacks.
 ```css
 :focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 ```
-
----
 
 ## 13. Comments & documentation
 
@@ -229,23 +201,17 @@ Inline comments explain **why**, not what:
 margin-block-start: var(--space-300);
 ```
 
----
-
 ## 14. Performance
 
 - Minimise repaint/reflow. Prefer `transform` over `top/left` in animations.
 - Avoid deep descendant selectors.
 - Audit unused CSS; set up coverage checks in CI.
 
----
-
 ## 15. Browser support
 
 - Target **last 2 evergreen versions** and **current iOS/Android WebView**.
 - Provide fallbacks for features behind flags or limited support.
 - Document any known gaps in the component header.
-
----
 
 ## 16. Linting & tooling
 
@@ -267,8 +233,6 @@ margin-block-start: var(--space-300);
 
 Add Prettier for formatting. 2‑space indent, trailing newline, LF line endings.
 
----
-
 ## 17. Git & change control
 
 - One change per commit. Imperative mood, short subject.
@@ -279,8 +243,6 @@ feat(card): add raised variant and tokens
 ```
 
 Include a brief **why** in the body when non‑obvious.
-
----
 
 ## 18. Example: component skeleton
 
@@ -310,21 +272,15 @@ Include a brief **why** in the body when non‑obvious.
 }
 ```
 
----
-
 ## 19. Attribution
 
 Credit any reused animation logic or design patterns in component headers.
-
----
 
 ## 20. References
 
 - Google HTML/CSS Style Guide – structure, naming, and formatting.
 - MDN – CSS cascade layers, custom properties, media features.
 - WCAG 2.2 – contrast and focus requirements.
-
----
 
 ## Appendix A – header block template
 

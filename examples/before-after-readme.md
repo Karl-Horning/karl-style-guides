@@ -2,8 +2,6 @@
 
 Short examples showing how the README Style Guide improves clarity and accessibility.
 
----
-
 ## Before
 
 - Long paragraphs without structure.
@@ -12,9 +10,7 @@ Short examples showing how the README Style Guide improves clarity and accessibi
 
 > our project lets you do a bunch of stuff. install it however you want.
 > we might add docs later. it probably works on windows.
-
----
-
+>
 ## After
 
 ### Overview

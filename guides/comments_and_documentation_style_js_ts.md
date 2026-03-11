@@ -2,8 +2,6 @@
 
 Simple rules for **clear, accessible, tool-friendly** docs. Adapted in part from [Google’s TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html#comments-documentation).
 
----
-
 ## Table of Contents
 
 - [Comments \& Documentation Style (JS/TS)](#comments--documentation-style-jsts)
@@ -29,15 +27,11 @@ Simple rules for **clear, accessible, tool-friendly** docs. Adapted in part from
   - [Maintenance](#maintenance)
   - [Author](#author)
 
----
-
 ## Scope & Intent
 
 - **JSDoc (`/** … */`)** → **API docs** users of the code should read.
 - **Line comments (`// …`)** → **implementation notes** for maintainers.
 - **Multi-line** remarks use **stacked `//`**, not `/* … */`.
-
----
 
 ## JSDoc: General Rules
 
@@ -74,8 +68,6 @@ Simple rules for **clear, accessible, tool-friendly** docs. Adapted in part from
  */
 ```
 
----
-
 ## JSDoc in TypeScript vs JavaScript
 
 - **TypeScript:** **do not duplicate types** in JSDoc. No `@param {Type}`.
@@ -95,8 +87,6 @@ export function getAuthors(jokes: { author: string }[]): string[] { /* … */ }
 export function getAuthors(jokes) { /* … */ }
 ```
 
----
-
 ## Functions & Methods
 
 - Method descriptions **start with a verb phrase** ("Return…", "Filter…").
@@ -115,8 +105,6 @@ export function getAuthors(jokes) { /* … */ }
 export function filterJokes(jokes, opts) { /* … */ }
 ```
 
----
-
 ## Classes & Parameter Properties (TS)
 
 - Class JSDoc explains **how/when** to use it.
@@ -129,8 +117,6 @@ export class JokeCache {
   constructor(private readonly store: Map<string, unknown>) {}
 }
 ```
-
----
 
 ## Module (File) Docs
 
@@ -147,8 +133,6 @@ export class JokeCache {
  */
 ```
 
----
-
 ## Line Comments (`//`)
 
 - Explain **why**, not the obvious **what**.
@@ -160,8 +144,6 @@ export class JokeCache {
 const limit = Math.min(100, Math.max(10, Number(q.limit) || 20));
 ```
 
----
-
 ## Call-site "parameter name" comments
 
 Use when the value's intent isn't obvious.
@@ -171,8 +153,6 @@ renderList(items, /* shouldRender= */ true, /* name= */ "popular");
 ```
 
 Prefer redesigning the API to accept an object if this appears often.
-
----
 
 ## Decorators (TS/Frameworks)
 
@@ -184,8 +164,6 @@ Place JSDoc **before** decorators; never between decorator and declaration.
 export class FooComponent {}
 ```
 
----
-
 ## Accessibility Guidelines
 
 - Write **short, concrete** sentences; avoid jargon.
@@ -193,8 +171,6 @@ export class FooComponent {}
 - Keep examples **copy-pasteable**.
 - Use **consistent terms**; avoid synonym switching.
 - Keep line length ~**80 chars** for screen readers and diffs.
-
----
 
 ## Do / Don't
 
@@ -209,8 +185,6 @@ Don't:
 - Don't restate names/types in TS JSDoc.
 - Don't use ASCII art boxes.
 - Don't narrate trivial code.
-
----
 
 ## Quick Examples
 
@@ -236,8 +210,6 @@ export function getRandom(jokes) { /* … */ }
 export function sendJson(res, data, status = 200) { /* … */ }
 ```
 
----
-
 ## Maintenance
 
 - Treat this guide as **living** — update it when new conventions or tools emerge.
@@ -245,8 +217,6 @@ export function sendJson(res, data, status = 200) { /* … */ }
 - Align terminology with real project usage.
 - Remove outdated or redundant rules promptly to avoid confusion.
 - Use ESLint with `eslint-plugin-jsdoc` to validate tag order, punctuation, and spacing.
-
----
 
 ## Author
 
