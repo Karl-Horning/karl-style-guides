@@ -1,106 +1,116 @@
 # CSS Style Guide
 
-> Concise rules for consistent, accessible, and maintainable CSS. Written in
-> plain English. Optimised for quick scanning and day‑to‑day use.
->
+This document provides rules for creating consistent, accessible, and maintainable CSS. It is optimised for quick scanning and day-to-day use.
+
 ## Table of Contents
 
 - [CSS Style Guide](#css-style-guide)
   - [Table of Contents](#table-of-contents)
-  - [1. Principles](#1-principles)
-  - [2. File structure](#2-file-structure)
-  - [3. Cascade layers](#3-cascade-layers)
-  - [4. Naming](#4-naming)
-  - [5. Selectors \& specificity](#5-selectors--specificity)
-  - [6. Tokens (custom properties)](#6-tokens-custom-properties)
-  - [7. Units \& sizing](#7-units--sizing)
-  - [8. Colour \& contrast](#8-colour--contrast)
-  - [9. Typography](#9-typography)
-  - [10. Layout](#10-layout)
-  - [11. Motion \& animation](#11-motion--animation)
-  - [12. Accessibility](#12-accessibility)
-  - [13. Comments \& documentation](#13-comments--documentation)
-  - [14. Performance](#14-performance)
-  - [15. Browser support](#15-browser-support)
-  - [16. Linting \& tooling](#16-linting--tooling)
-  - [17. Git \& change control](#17-git--change-control)
-  - [18. Example: component skeleton](#18-example-component-skeleton)
-  - [19. Attribution](#19-attribution)
-  - [20. References](#20-references)
-  - [Appendix A – header block template](#appendix-a--header-block-template)
+  - [Principles](#principles)
+  - [File structure](#file-structure)
+  - [Cascade layers](#cascade-layers)
+  - [Naming](#naming)
+  - [Selectors and specificity](#selectors-and-specificity)
+  - [Tokens](#tokens)
+  - [Units and sizing](#units-and-sizing)
+  - [Colour and contrast](#colour-and-contrast)
+  - [Typography](#typography)
+  - [Layout](#layout)
+  - [Motion and animation](#motion-and-animation)
+  - [Accessibility](#accessibility)
+  - [Comments and documentation](#comments-and-documentation)
+  - [Performance](#performance)
+  - [Browser support](#browser-support)
+  - [Linting and tooling](#linting-and-tooling)
+  - [Git protocol](#git-protocol)
+  - [Example: component skeleton](#example-component-skeleton)
 
-## 1. Principles
+## Principles
 
-- **Clarity over cleverness.** Prefer readable CSS to micro‑optimisations.
-- **Accessible by default.** Respect user preferences and contrast needs.
-- **Predictable cascade.** Use cascade layers, small components, and low
-  specificity.
-- **Progressive enhancement.** New features with safe fallbacks.
-- **Single source of truth.** Centralise tokens (colour, spacing, type, motion).
+- Prioritise clarity and readability over micro-optimisations.
+- Ensure styles are accessible by default, respecting user preferences and contrast needs.
+- Maintain a predictable cascade using cascade layers, small components, and low specificity.
+- Apply progressive enhancement with safe fallbacks for new features.
+- Centralise tokens for colour, spacing, typography, and motion as a single source of truth.
 
-## 2. File structure
+## File structure
+
+Load order must proceed from top to bottom: core, layout, components, utilities, and pages.
 
 ```text
 styles/
-  core.css          # @layer declarations + resets + tokens
+  core.css          # @layer declarations, resets, and tokens
   layout.css        # base page layout and common wrappers
   components.css    # reusable components
-  utilities.css     # simple one‑off helpers
-  pages/            # page‑specific overrides (last to load)
+  utilities.css     # simple one-off helpers
+  pages/            # page-specific overrides (last to load)
 ```
 
-Load order (top → bottom): **core → layout → components → utilities → pages**.
+## Cascade layers
 
-## 3. Cascade layers
-
-Declare the stack first. Keep rules inside layers.
+Declare the layer stack at the top of the core file. Define all rules inside these layers to ensure predictable overrides.
 
 ```css
-/* 1) Declare once, at the very top of core.css */
+/* 1) Declare once at the top of core.css */
 @layer base, theme, components, utilities, pages;
 
 /* 2) Define inside layers */
-@layer theme { /* tokens and colours */ }
-@layer base { /* layout and scaffolding */ }
-@layer components { /* buttons, cards, etc. */ }
-@layer utilities { /* .u-text-center, .u-sr-only */ }
-@layer pages { /* page-specific tweaks */ }
+@layer theme {
+  /* tokens and colours */
+}
+
+@layer base {
+  /* layout and scaffolding */
+}
+
+@layer components {
+  /* buttons, cards, etc. */
+}
+
+@layer utilities {
+  /* .u-text-center, .u-sr-only */
+}
+
+@layer pages {
+  /* page-specific tweaks */
+}
 ```
 
-**Why**: predictable overrides and fewer specificity wars.
+## Naming
 
-## 4. Naming
+Keep names short, specific, lower-case, and hyphenated. Use American English for all technical identifiers (e.g., `color`, `center`, `gray`). This maintains consistency with native CSS properties and improves project-wide searchability.
 
-- **Components**: `.c-thing` (e.g. `.c-card`, `.c-modal`).
-- **Elements**: `.c-card__header`.
-- **Modifiers**: `.c-card--raised`.
-- **State**: `.is-open`, `.is-invalid` (added by JS only).
-- **Utilities**: `.u-hidden`, `.u-flow-300`.
-- **JS hooks**: `[data-js="toggle"]` (never style by `js-` classes).
+- **Components:** `.c-thing` (e.g., `.c-card`, `.c-modal`).
+- **Elements:** `.c-card__header`.
+- **Modifiers:** `.c-card--raised`.
+- **State:** `.is-open`, `.is-invalid` (added by JavaScript only).
+- **Utilities:** `.u-hidden`, `.u-flow-300`.
+- **JS hooks:** `[data-js="toggle"]` (never style using `js-` classes).
 
-Keep names **short, specific, lower‑case**, with hyphens.
+## Selectors and specificity
 
-## 5. Selectors & specificity
-
-- One class per rule where possible: `.c-card { … }`.
-- Avoid ID selectors for styling. Use IDs for landmarks and ARIA targets only.
-- Scope instance variables to a parent to **avoid leaks**:
+- Restrict rules to one class per block where possible.
+- Avoid ID selectors for styling; reserve IDs for landmarks and ARIA targets.
+- Scope instance variables to a parent to avoid leaks.
+- Avoid `!important` except in utility classes, and document its use.
 
 ```css
-.c-blobs .d1 { --dx: 30s; }
+.c-blobs .d1 {
+  --dx: 30s;
+}
 ```
 
-- Avoid `!important` except in **utilities** (document why).
+## Tokens
 
-## 6. Tokens (custom properties)
-
-Define in `@layer theme` under `:root`.
+Define tokens in the `theme` layer under the `:root` pseudo-class. Use tokens globally and avoid raw values in components.
 
 ```css
 @layer theme {
   :root {
     /* Colour (HSL preferred for easy theming) */
-    --brand-h: 352; --brand-s: 50%; --brand-l: 53%;
+    --brand-h: 352;
+    --brand-s: 50%;
+    --brand-l: 53%;
     --brand: hsl(var(--brand-h) var(--brand-s) var(--brand-l));
 
     /* Spacing scale (4px baseline) */
@@ -115,73 +125,85 @@ Define in `@layer theme` under `:root`.
 }
 ```
 
-Use tokens everywhere; avoid raw values in components.
+## Units and sizing
 
-## 7. Units & sizing
-
-- **rem** for type and spacing. **px** only for borders/hairlines.
-- Use **aspect-ratio** where possible. Avoid magic numbers.
-- Prefer **min() / max() / clamp()** for responsive sizing.
+- Use `rem` for typography and spacing. Use `px` only for borders and hairlines.
+- Use `aspect-ratio` where possible and avoid magic numbers.
+- Prefer `min()`, `max()`, and `clamp()` for responsive sizing.
 
 ```css
-.c-hero { font-size: clamp(1rem, 1vw + 1rem, 1.5rem); }
+.c-hero {
+  font-size: clamp(1rem, 1vw + 1rem, 1.5rem);
+}
 ```
 
-## 8. Colour & contrast
+## Colour and contrast
 
-- Use tokens; derive variants with **HSL** or colour‑mix.
-- Minimum contrast: **WCAG AA** for text and UI.
-- Reserve pure black/white for ink/background; avoid muddy greys.
+- Use tokens and derive variants with HSL or `color-mix`.
+- Maintain WCAG AA minimum contrast for text and UI.
+- Reserve pure black and white for ink and backgrounds; avoid muddy grays.
 
 ```css
-.c-button { background: var(--brand); color: white; }
+.c-button {
+  background: var(--brand);
+  color: white;
+}
 ```
 
-## 9. Typography
+## Typography
 
-- Define scale in theme. Use logical properties.
-- Line length target: **45–85 ch**. Preserve readability.
+Define typographical scales in the theme using logical properties. Target a line length of 45–85 characters to preserve readability.
 
 ```css
 @layer theme {
-  :root { --font-body: system-ui, sans-serif; }
+  :root {
+    --font-body: system-ui, sans-serif;
+  }
 }
-body { font-family: var(--font-body); }
+
+body {
+  font-family: var(--font-body);
+}
 ```
 
-## 10. Layout
+## Layout
 
-- Prefer **Grid** for page and complex layout; **Flexbox** for one‑dimensional.
-- Use content‑driven gaps: `gap: var(--space-400);`
-- Avoid fixed heights; use min/max and intrinsic sizing.
+- Prefer CSS Grid for complex page layouts and Flexbox for one-dimensional layouts.
+- Use content-driven gaps (e.g., `gap: var(--space-400);`).
+- Avoid fixed heights; use intrinsic sizing.
 
-## 11. Motion & animation
+## Motion and animation
 
-- Respect reduced motion.
-- Use the **global --speed** multiplier.
-- Keep durations in the **200–700ms** range for UI.
-- Animate **opacity, transform, filter**. Avoid layout‑thrashing properties.
+- Respect reduced motion preferences.
+- Use the global `--speed` multiplier.
+- Keep UI animation durations between 200–700ms.
+- Animate only `opacity`, `transform`, and `filter` to avoid layout thrashing.
 
 ```css
-@media (prefers-reduced-motion: reduce) { * { animation: none; transition: none; } }
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+}
 ```
 
-For SVG geometry animation, document support and provide sensible fallbacks.
+## Accessibility
 
-## 12. Accessibility
-
-- Always include reduced motion and focus‑visible rules.
-- Hit area: **44×44px** minimum for touch actions.
+- Always include reduced motion and `focus-visible` rules.
+- Ensure hit areas are a minimum of 44x44px for touch actions.
 - Do not rely on colour alone; add text, icons, or patterns.
 
 ```css
-:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
 ```
 
-## 13. Comments & documentation
+## Comments and documentation
 
-Use a **header docblock** per file and **targeted inline comments** only where
-they add real value. Follow this template:
+Use a header documentation block per file. Use targeted inline comments only to explain the reasoning behind a rule.
 
 ```css
 /*
@@ -189,33 +211,31 @@ they add real value. Follow this template:
  * Purpose: Present content in a contained panel.
  * API: .c-card [--elevation], .c-card__header, .c-card__body
  * Accessibility: Focus states, contrast >= AA.
- * Risks: Long titles overflow → text-wrap: balance.
+ * Risks: Long titles overflow -> text-wrap: balance.
  * Changelog: 2025-11-05 Added compact variant.
  */
+
+.c-card {
+  /* Push above adjacent image to preserve rhythm at small sizes */
+  margin-block-start: var(--space-300);
+}
 ```
 
-Inline comments explain **why**, not what:
+## Performance
 
-```css
-/* Push above adjacent image to preserve rhythm at small sizes */
-margin-block-start: var(--space-300);
-```
-
-## 14. Performance
-
-- Minimise repaint/reflow. Prefer `transform` over `top/left` in animations.
+- Minimise repaint and reflow. Prefer `transform` over `top` or `left` in animations.
 - Avoid deep descendant selectors.
-- Audit unused CSS; set up coverage checks in CI.
+- Audit unused CSS and establish coverage checks in CI.
 
-## 15. Browser support
+## Browser support
 
-- Target **last 2 evergreen versions** and **current iOS/Android WebView**.
-- Provide fallbacks for features behind flags or limited support.
-- Document any known gaps in the component header.
+- Target the last two evergreen browser versions and current iOS/Android WebViews.
+- Provide fallbacks for features behind flags or with limited support.
+- Document any known rendering gaps in the component header.
 
-## 16. Linting & tooling
+## Linting and tooling
 
-- Use **Stylelint** with the standard config. Project overrides below.
+Use Stylelint with the standard configuration and the following project overrides. Run Prettier for formatting using a 2-space indent, trailing newlines, and LF line endings.
 
 ```json
 {
@@ -231,20 +251,17 @@ margin-block-start: var(--space-300);
 }
 ```
 
-Add Prettier for formatting. 2‑space indent, trailing newline, LF line endings.
+## Git protocol
 
-## 17. Git & change control
-
-- One change per commit. Imperative mood, short subject.
-- Reference issue/PR IDs. Include **scope** when helpful.
+- Limit commits to one structural change.
+- Use the imperative mood for short subjects.
+- Reference issue/PR IDs and include the scope when helpful.
 
 ```text
 feat(card): add raised variant and tokens
 ```
 
-Include a brief **why** in the body when non‑obvious.
-
-## 18. Example: component skeleton
+## Example: component skeleton
 
 ```css
 /*
@@ -255,40 +272,39 @@ Include a brief **why** in the body when non‑obvious.
  */
 @layer components {
   .c-button {
-    display: inline-grid; place-items: center;
-    min-width: 10ch; min-height: 44px;
-    padding-inline: var(--space-400);
+    background: var(--brand);
     border-radius: 999px;
-    background: var(--brand); color: white;
-    transition: transform 200ms, box-shadow 200ms;
+    color: white;
+    display: inline-grid;
+    min-height: 44px;
+    min-width: 10ch;
+    padding-inline: var(--space-400);
+    place-items: center;
+    transition: box-shadow 200ms, transform 200ms;
   }
-  .c-button:focus-visible { outline: 2px solid white; outline-offset: 2px; }
-  .c-button:is(:hover, :focus-visible) { transform: translateY(-1px); }
-  .c-button--danger { background: color-mix(in oklab, var(--brand), red 40%); }
-  .c-button.is-loading { pointer-events: none; opacity: 0.7; }
+
+  .c-button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+
+  .c-button:is(:hover, :focus-visible) {
+    transform: translateY(-1px);
+  }
+
+  .c-button--danger {
+    background: color-mix(in oklab, var(--brand), red 40%);
+  }
+
+  .c-button.is-loading {
+    opacity: 0.7;
+    pointer-events: none;
+  }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .c-button { transition: none; }
+  .c-button {
+    transition: none;
+  }
 }
-```
-
-## 19. Attribution
-
-Credit any reused animation logic or design patterns in component headers.
-
-## 20. References
-
-- Google HTML/CSS Style Guide – structure, naming, and formatting.
-- MDN – CSS cascade layers, custom properties, media features.
-- WCAG 2.2 – contrast and focus requirements.
-
-## Appendix A – header block template
-
-```css
-/*
- * File: components.css
- * Purpose: Reusable components styled with low specificity.
- * Owner: Frontend team
- * Changelog: 2025-11-05 initial version
- */
 ```
