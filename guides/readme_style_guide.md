@@ -1,146 +1,83 @@
-# README Style Guide
+# Project documentation standard
 
-Short, practical rules for **clear, consistent, and accessible READMEs**. This guide is designed to make documents easier to **read, navigate, and maintain**, improving accessibility for all contributors and users.
+Short, practical rules for clear, consistent, and accessible documentation. This guide aligns with Google's developer documentation style to ensure objective and maintainable repositories.
 
-## Table of Contents
+## Required sections
 
-- [README Style Guide](#readme-style-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Required Sections](#required-sections)
-    - [1) Title](#1-title)
-    - [2) Overview](#2-overview)
-    - [3) Quick Start](#3-quick-start)
-    - [4) Usage / Scripts](#4-usage--scripts)
-    - [5) Project Structure](#5-project-structure)
-    - [6) License](#6-license)
-  - [Optional Sections](#optional-sections)
-    - [Badges](#badges)
-    - [Live / Demo](#live--demo)
-    - [Tech Stack](#tech-stack)
-    - [Configuration](#configuration)
-    - [Contributing](#contributing)
-    - [Testing](#testing)
-    - [Roadmap](#roadmap)
-    - [FAQ / Known Issues](#faq--known-issues)
-  - [Formatting Rules](#formatting-rules)
-  - [♿ Accessibility \& Tone](#-accessibility--tone)
-  - [Maintenance](#maintenance)
-  - [Author](#author)
+### Title
 
-## Required Sections
+Create one H1 header containing the project name and a brief tagline.
 
-### 1) Title
-
-One H1, clear and complete.
-
-- **Use:** Project name + short tagline.
 - **Example:** `# GetOneLiner — Tiny JSON jokes API`
 
-### 2) Overview
+### Overview
 
-1–3 sentences answering **what**, **why**, **who for**.
+Write one to three sentences defining the purpose and scope. Link to external documentation where applicable.
 
-- **Use:** State purpose and scope; link to docs if they exist.
+### Quick start
 
-### 3) Quick Start
+Document the minimal steps required to run the project in a development environment.
 
-Minimal steps to run in dev.
-
-- **Use:** Shell fenced block; prefer copy-paste commands.
+- **Use:** Fenced code blocks with the language specified.
 - **Example:**
 
-  ```bash
+```bash
   npm install
   npm run dev
-  ```
+```
 
-### 4) Usage / Scripts
+### Usage and scripts
 
-How to use or run scripts.
+Describe interactions using tables or hyphenated lists with short, action-led descriptions.
 
-- **Use:** Table or hyphen lists with short, action-led descriptions.
+### Project structure
 
-### 5) Project Structure
+Display key directories using a text-based tree structure. Avoid listing every file to reduce noise.
 
-Show key folders only.
+**Example:**
 
-- **Use:** Tree with comments; avoid noise.
+```text
+src/
+├─ controllers/   # HTTP handlers
+├─ routes/        # Express routers
+└─ utils/         # Pure helpers
+```
 
-  ```text
-  src/
-  ├─ controllers/   # HTTP handlers
-  ├─ routes/        # Express routers
-  └─ utils/         # Pure helpers
-  ```
+### License
 
-### 6) License
+State the license type or specify if all rights are reserved. Link directly to the license file.
 
-Name the licence (e.g. MIT) or say "All rights reserved".
+## Optional sections
 
-- **Use:** Link to `LICENSE`.
+- **Badges:** Include only high-value badges such as build status, coverage, or version.
+- **Live demo:** Provide one descriptive link or one screenshot.
+- **Tech stack:** Detail the stack using bullet points with version numbers if necessary.
+- **Configuration:** List required environment variables and their default values.
+- **Contributing:** Explain how to propose changes and link to the contributing document.
+- **Testing:** Explain how to run tests and specify the frameworks used.
+- **Roadmap:** Include short checklists only if the project is actively maintained.
+- **FAQ and known issues:** Keep lists small and focused.
 
-## Optional Sections
+## Formatting rules
 
-### Badges
+- **Headings:** Use sentence case for all headings and ensure there is only one H1 per file. Include space before and after headings.
+- **Lists:** Use hyphens (`-`) for unordered lists and lazy numbering for long ordered lists.
+- **Code blocks:** Always use fenced blocks with language identifiers and prefer them over indented blocks.
+- **Links:** Prefer explicit repository-relative paths instead of deep directory hops.
+- **Tables:** Use tables only for strictly tabular data; otherwise, use lists.
+- **Markup:** Prefer plain Markdown over HTML to maintain portability.
 
-High-value only (build, coverage, version).
+## Accessibility and tone
 
-### Live / Demo
-
-One link and/or one screenshot.
-
-### Tech Stack
-
-- Bullets with versions if important.
-
-### Configuration
-
-- List required env vars and defaults.
-
-### Contributing
-
-- How to propose changes; link to `CONTRIBUTING.md` if present.
-
-### Testing
-
-- How to run tests; note frameworks.
-
-### Roadmap
-
-- Only if actively maintained; use short checklists.
-
-### FAQ / Known Issues
-
-- Small, focused lists.
-
-## Formatting Rules
-
-- **Headings:** ATX `#` style; **one H1 per file**. Space before/after headings.
-- **Lists:** Use **hyphens (`-`)** for unordered lists.
-  Use lazy numbering for long ordered lists.
-- **Code blocks:** **Fence** with language (e.g. `bash`, `js`). Prefer fenced over indented.
-- **Links:** Prefer explicit repo-relative paths; avoid deep `../..` hops.
-- **Tables:** Only for real tabular data; otherwise use lists.
-- **Markdown over HTML:** Prefer plain Markdown for portability.
-
-## ♿ Accessibility & Tone
-
-- Use **emojis** in H1 and H2 headings to improve scanning and recognition.
-- Avoid **smart quotes** and **curly apostrophes** — use straight quotes (`"` and `'`) for better readability and consistency.
-  ⚠️ **(This rule doesn’t apply to code enclosed in backticks.)**
-- Use **hyphens (`-`)** for bullet points to make lists easier to scan, especially when they include bold or italicised text.
-- Reserve *italics* for rare cases (e.g., technical terms or examples). Overuse can reduce readability and increase visual strain; prefer **bold** for emphasis.
-- Add **horizontal rules (`---`)** between major H2 sections for visual separation.
-- Include **alt text** for all images — describe what’s shown and why it matters. Avoid decorative images without a clear purpose.
-- Write **short, direct sentences** and avoid jargon where possible.
-- Ensure **copy-pasteable examples** — no placeholder text or truncated code.
+- **Emojis:** Avoid emojis in headings to ensure compatibility with screen readers and maintain professional neutrality.
+- **Punctuation:** Use straight quotes (`"` and `'`) instead of smart quotes to improve readability and consistency.
+- **Visual separation:** Avoid manual horizontal rules (`---`) between major sections. Allow the platform's native heading styles (e.g., GitHub's H2 borders) to provide natural structural breaks.
+- **Alt text:** Provide descriptive alt text for all images explaining their purpose. Avoid decorative images without clear value.
+- **Tone:** Write short, direct sentences, avoid jargon, and ensure all examples are completely copy-pasteable without placeholder text.
+- **Emphasis:** Use bold text for emphasis. Reserve italics for technical terms to reduce visual strain.
 
 ## Maintenance
 
-- Treat README as **living**: update with meaningful changes.
-- Remove stale sections quickly ("better over best").
-- Keep examples **copy-pasteable** and tested.
-
-## Author
-
-Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)
+- Treat the documentation as a living document and update it alongside meaningful code changes.
+- Remove stale sections quickly to prioritise accuracy.
+- Ensure all code examples remain fully functional and tested.
